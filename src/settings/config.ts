@@ -26,4 +26,33 @@ export const MEMORY_VERSION = 1;
 export const roomName = Game.spawns.Spawn1.room.name;
 
 // Slack
-export const ENABLE_SLACK = true;
+export const ENABLE_SLACK: boolean = true;
+
+// Debug
+export const DEBUG_MODE: boolean = true;
+
+// Minimum number of ticksToLive for a Creep before they go to renew.
+export const DEFAULT_MIN_LIFE_BEFORE_NEEDS_REFILL: number = 300;
+
+// Prepend log output with current tick number.
+export const LOG_PRINT_TICK: boolean = true;
+
+// Prepend log output with source line.
+export const LOG_PRINT_LINES: boolean = true;
+
+// Load source maps and resolve source lines back to typeascript.
+export const LOG_LOAD_SOURCE_MAP: boolean = true;
+
+// Maximum padding for source links (for aligning log output).
+export const LOG_MAX_PAD: number = 100;
+
+// VSC location, used to create links back to source. Repo and revision are filled in
+// at build time for git repositories.
+export const LOG_VSC = { repo: "@@_repo_@@", revision: "@@_revision_@@", valid: false };
+
+// URL template for VSC links, this one works for github and gitlab.
+export const LOG_VSC_URL_TEMPLATE = (path: string, line: string) => {
+  return `${LOG_VSC.repo}/blob/${LOG_VSC.revision}/${path}#${line}`;
+};
+// ScreepsManager Max Screeps Values
+export const MANAGER_MAX_BUILDERS = 1;

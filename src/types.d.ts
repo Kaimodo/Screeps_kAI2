@@ -1,36 +1,65 @@
+import { CreepRoles } from "settings/memory";
+
 // example declaration file - remove these and add your own custom typings
 
-// memory extension samples
-interface CreepMemory {
-  _trav: any;
-  _travel: any;
-  role: string;
-  room: string;
-  working: boolean;
-  avoid: any;
-}
-
-interface Memory {
-  [key: string]: any;
-  uuid: number;
-  log: any;
-}
-
 // `global` extension samples
-declare namespace NodeJS {
-  interface Global {
-    log: any;
-    cc: any;
-    Profiler: any;
+declare global {
+  namespace NodeJS {
+    interface Global {
+      log: any;
+      cc: any;
+    }
   }
 }
 
-interface RoomMemory {
-  [name: string]: any;
+interface Global {
+  cc: string;
+  uuid: number;
+  log: any;
+  CREEP_BUILD_RANGE: number;
+  CREEP_RANGED_ATTACK_RANGE: number;
+  CREEP_UPGRADE_RANGE: number;
+  CREEP_REPAIR_RANGE: number;
+  CREEP_RANGED_HEAL_RANGE: number;
 }
-interface FlagMemory {
-  [name: string]: any;
+
+declare var global: Global;
+
+declare const __REVISION__: string;
+
+interface GameMemory {
+  memVersion: number | undefined;
+  uuid: number;
+  log: any;
+
+  creeps: {
+    [name: string]: any;
+  };
+
+  flags: {
+    [name: string]: any;
+  };
+
+  rooms: {
+    [name: string]: RoomMemory;
+  };
+
+  spawns: {
+    [name: string]: any;
+  };
 }
-interface SpawnMemory {
-  [name: string]: any;
+interface CreepMemory {
+  uuid: number;
+  name: string;
+  role: CreepRoles;
+  roleString: string;
+  log: boolean;
+  working: boolean;
+  gathering: boolean;
+  assignedMineTaskId?: number;
+  assignedContainerId?: string;
+  assignedTargetId?: string;
+  isUpgradingController: boolean;
+  repairTargetId?: string;
+  [key: string]: any;
 }

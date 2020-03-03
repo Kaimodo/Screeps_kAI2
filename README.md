@@ -1,4 +1,6 @@
 
+# My screeps AI
+![](https://screeps.com/images/logotype-animated.svg)
 
 # What me added:
 Screeps-Inscribe from ([resir014](https://github.com/resir014/screeps-inscribe))
@@ -8,13 +10,16 @@ Traveler from ([Bonzaiferroni](https://github.com/bonzaiferroni/Traveler))
 Tryed to integrate Slack-Messages. It' won't work as for now. some error with XMLHttpRequest.
 
 ## Console Commands
-  Commands are defined in Consolecommands.st
+  Commands are defined in Consolecommands.ts
   Test if they work by typing in
   ```bash
   cc.test()
   ```
   in the Console.
 
+## This is all WIP and there will be no guarantee that commited code is working ;)
+
+# Origin from here:
 # Screeps Typescript Starter
 
 Screeps Typescript Starter is a starting point for a Screeps AI written in Typescript. It provides everything you need to start writing your AI whilst leaving `main.ts` as empty as possible.
